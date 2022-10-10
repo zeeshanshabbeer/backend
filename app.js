@@ -31,7 +31,7 @@ app.use(cookieParser());
 // };
 app.use(cors());
 // Student Router
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
   res.status(200).json({
     status: "success",
     message: "Deleted Successfully",
