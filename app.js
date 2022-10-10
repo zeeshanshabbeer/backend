@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const Timetable = require("./routes/timetableRouter");
+const Timetable = require("./routes/TimetableRouter");
 const SechemeOfStudy = require("./routes/SechemeOfStudyRouter");
 const DegreePlanner = require("./routes/DegreePlannerRouter");
 const ChatBox = require("./routes/ChatBoxRouter");
@@ -52,7 +52,6 @@ app.use("/DegreePlanner", DegreePlanner);
 app.use("/Pretest", PretestController);
 // RepeatCourseController
 app.use("/RepeatCourse", RepeatCourseController);
-
 // OfficeHoursController
 app.use("/OfficeHours", OfficeHoursController);
 // FreezeSemesterController
