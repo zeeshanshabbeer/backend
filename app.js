@@ -31,12 +31,12 @@ app.use(cookieParser());
 // };
 app.use(cors());
 // Student Router
-app.use("/", (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "Deleted Successfully",
-  });
-});
+// app.use("/", (req, res) => {
+//   res.status(200).json({
+//     status: "success",
+//     message: "Deleted Successfully",
+//   });
+// });
 app.use("/Student", Student);
 //BatchAdvisorController
 app.use("/BatchAdvisor", BatchAdvisorController);
