@@ -18,8 +18,8 @@ const createSendToken = (user, statusCode, req, res) => {
       Date.now() + 3600000 //1 hour
     ),
     httpOnly: true,
-    // secure: true,
-    // sameSite: "none",
+    secure: true,
+    sameSite: "none",
   });
   res.status(statusCode).json({
     status: "success",
