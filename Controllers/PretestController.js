@@ -78,7 +78,6 @@ exports.getQuestions = catchAsync(async (req, res, next) => {
   if (!question) {
     return next(new AppError("Please enter correct CourseCode", 400));
   } else {
-    console.log(question);
     res.status(200).json({
       status: "success",
       message: question.questions,
@@ -88,8 +87,6 @@ exports.getQuestions = catchAsync(async (req, res, next) => {
 //verify the answers
 exports.verifyAnswer = catchAsync(async (req, res, next) => {
   const { answer } = req.body;
-
-  console.log(answer);
   const { courseName } = req.params;
   const { registrationId } = req.rootuser;
   const record = await Pretest.findOne({ courseName });
@@ -101,7 +98,6 @@ exports.verifyAnswer = catchAsync(async (req, res, next) => {
       for (let j = 0; j < record.questions.length; j++) {
         if (record.questions[j].question === answer[i].question) {
           if (record.questions[j].correct_answer === answer[i].correct_answer) {
-            console.log(" 1");
             marks = marks + 1;
           }
         }

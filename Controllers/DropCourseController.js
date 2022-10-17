@@ -33,7 +33,6 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
     if (cred >= 15) {
       var abc = "";
       for (var i = 0; i < record.length; i++) {
-        console.log(i);
         if (record[i].courseName === courseName) {
           abc = i;
         }
@@ -239,7 +238,6 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
         cred += record[i].credits;
       }
     }
-    //  console.log("first",cred)
     if (cred >= 15) {
       var abc = "";
       for (var i = 0; i < record.length; i++) {
@@ -341,11 +339,9 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
         cred += record[i].credits;
       }
     }
-    //  console.log("first",cred)
     if (cred >= 15) {
       var abc = "";
       for (var i = 0; i < record.length; i++) {
-        console.log(i);
         if (record[i].courseName === courseName) {
           abc = i;
         }
@@ -546,7 +542,6 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
         cred += record[i].credits;
       }
     }
-    //  console.log("first",cred)
     if (cred >= 15) {
       var abc = "";
       for (var i = 0; i < record.length; i++) {
@@ -746,7 +741,6 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
     const record = req.rootuserSemester8;
     var cred = 0;
     for (var i = 0; i < record.length; i++) {
-      console.log(i);
       if (record[i].status === "enrolled") {
         cred += record[i].credits;
       }
@@ -1152,7 +1146,6 @@ exports.dropCourse_Request = catchAsync(async (req, res, next) => {
     const record = req.rootuserSemester12;
     var cred = 0;
     for (var i = 0; i < record.length; i++) {
-      console.log(i);
       if (record[i].status === "enrolled") {
         cred += record[i].credits;
       }

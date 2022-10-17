@@ -101,7 +101,6 @@ exports.Login = catchAsync(async (req, res, next) => {
 
 //Batch Advisor profile
 exports.Profile = catchAsync(async (req, res, next) => {
-  // console.log("Get the batch advisor profile data");
   res.status(200).json({
     status: "success",
     message: req.rootuser,

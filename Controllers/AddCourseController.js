@@ -75,7 +75,6 @@ exports.courses_that_added = catchAsync(async (req, res) => {
         }
       }
     }
-    // console.log(sos_courses);
     // check prerequsite which they drop or withdraw
     for (let i = 0; i < sos_courses.length; i++) {
       for (let j = 0; j < sos_courses.length; j++) {
@@ -2479,7 +2478,6 @@ exports.courses_that_added = catchAsync(async (req, res) => {
     let data1 = [];
     for (let i = 0; i < std_courses.length; i++) {
       if (std_courses[i].gp < 2) {
-        console.log(i);
         await data1.push(std_courses[i]);
       }
     }
@@ -2488,7 +2486,6 @@ exports.courses_that_added = catchAsync(async (req, res) => {
       for (let j = 0; j < std_courses.length; j++) {
         if (data1[i].courseCode === std_courses[j].courseCode) {
           if (data1[i].marks != std_courses[j].marks) {
-            console.log(data1[i].courseName);
             if (data1[i].marks < std_courses[j].marks) {
               await data1.splice(i, 1);
             }
@@ -3232,7 +3229,6 @@ exports.DeleteAddPending = catchAsync(async (req, res, next) => {
           } else if (data1.semester === 12) {
             for (let j = 0; j < data1.Result[0].Semester12.length; j++) {
               if (data1.Result[0].Semester12[j].courseName === courseName) {
-                // console.log(data1.Result[0].Semester8[j].status);
                 data1.Result[0].Semester12.splice(j, 1);
                 await data1.save();
 

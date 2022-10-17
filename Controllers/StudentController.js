@@ -151,12 +151,10 @@ exports.S_resetpassword = catchAsync(async (req, res, next) => {
 
 //top menu of Student
 exports.S_TopMenu = catchAsync(async (req, res, next) => {
-  // console.log("get top menu");
   res.status(200).json({
     status: "success",
     message: req.rootuser,
   });
-  // res.status(200).send(req.rootuser);
 });
 
 //-------------------home student--------------------
@@ -168,77 +166,63 @@ exports.Home = catchAsync(async (req, res, next) => {
       status: "success",
       message: req.rootuserSemester1,
     });
-    // res.status(200).send(req.rootuserSemester1);
   } else if ("FA21" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester2,
     });
-    // res.status(200).send(req.rootuserSemester2);
   } else if ("SP21" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester3,
     });
-    // res.status(200).send(req.rootuserSemester3);
   } else if ("FA20" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester4,
     });
-    // res.status(200).send(req.rootuserSemester4);
   } else if ("SP20" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester5,
     });
-    // res.status(200).send(req.rootuserSemester5);
   } else if ("FA19" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester6,
     });
-    // res.status(200).send(req.rootuserSemester6);
   } else if ("SP19" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester7,
     });
-    // res.status(200).send(req.rootuserSemester7);
   } else if ("FA18" === batch) {
-    console.log(req.rootuserSemester8);
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester8,
     });
-    // res.status(200).send(req.rootuserSemester8);
   } else if ("SP18" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester9,
     });
-    // res.status(200).send(req.rootuserSemester9);
   } else if ("FA17" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester10,
     });
-    // res.status(200).send(req.rootuserSemester10);
   } else if ("SP17" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester11,
     });
-    // res.status(200).send(req.rootuserSemester11);
   } else if ("FA16" === batch) {
     res.status(200).json({
       status: "success",
       message: req.rootuserSemester12,
     });
-    // res.status(200).send(req.rootuserSemester12);
   } else {
     return next(new AppError("enter correct batch", 400));
-    // res.status(200).send("error");
   }
 });
 
@@ -257,7 +241,6 @@ exports.HomeCredits = catchAsync(async (req, res, next) => {
       status: "success",
       message: cred,
     });
-    // res.json(cred);
   } else if (semester === 2) {
     for (let i = 0; i < student.Result[0].Semester2.length; i++) {
       if (student.Result[0].Semester2[i].status === "enrolled") {
@@ -268,7 +251,6 @@ exports.HomeCredits = catchAsync(async (req, res, next) => {
       status: "success",
       message: cred,
     });
-    // res.json(cred);
   } else if (semester === 3) {
     for (let i = 0; i < student.Result[0].Semester3.length; i++) {
       if (student.Result[0].Semester3[i].status === "enrolled") {
