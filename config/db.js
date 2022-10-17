@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const connectDb = async () => {
   try {
     const conn = mongoose.connect(process.env.DATABASE, {
-      //   useUnifiedTopology: true,
-      //   useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
       // useCreateIndex: true,
       // useFindAndModify: false
     });
