@@ -18,8 +18,8 @@ const createSendToken = (user, statusCode, req, res) => {
       Date.now() + 3600000 //1 hour
     ),
     httpOnly: true,
-    secure: true,
-    sameSite: "none",
+    // secure: true,
+    // sameSite: "none",
   });
   res.status(statusCode).json({
     status: "success",
@@ -39,8 +39,8 @@ exports.protect = catchAsync(async (req, res, next) => {
     req.headers.authorization.startsWith("Bearer")
   ) {
     token = req.headers.authorization.split(" ")[1];
-  } else if (req.cookies.jwtoken_S) {
-    token = req.cookies.jwtoken_S;
+  } else if (req.Cookies.jwtoken_S) {
+    token = req.Cookies.jwtoken_S;
   }
 
   if (!token) {
